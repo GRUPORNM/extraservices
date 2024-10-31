@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData">
+    <edmx:Reference Uri="./sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_AGGREGATION',Version='0001',SAP__Origin='LOCAL')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="Org.OData.Aggregation.V1" Alias="Aggregation"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="./sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_ANALYTICS',Version='0001',SAP__Origin='LOCAL')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.Analytics.v1" Alias="Analytics"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="./sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CAPABILITIES',Version='0001',SAP__Origin='LOCAL')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="Org.OData.Capabilities.V1" Alias="Capabilities"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="./sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CODELIST',Version='0001',SAP__Origin='LOCAL')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.CodeList.v1" Alias="SAP__CodeList"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="./sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMON',Version='0001',SAP__Origin='LOCAL')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="Common"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="./sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMUNICATION',Version='0001',SAP__Origin='LOCAL')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.Communication.v1" Alias="Communication"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="./sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_MEASURES',Version='0001',SAP__Origin='LOCAL')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="Org.OData.Measures.V1" Alias="Measures"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="./sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_PERSONALDATA',Version='0001',SAP__Origin='LOCAL')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.PersonalData.v1" Alias="PersonalData"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="./sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_UI',Version='0001',SAP__Origin='LOCAL')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.UI.v1" Alias="UI"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="./sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_VALIDATION',Version='0001',SAP__Origin='LOCAL')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="Org.OData.Validation.V1" Alias="Validation"/>
+    </edmx:Reference>
+    <edmx:DataServices m:DataServiceVersion="2.0">
+        <Schema Namespace="TQA.OD_EXTRA_SERVICES_SRV" xml:lang="en" sap:schema-version="1" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+            <EntityType Name="xTQAxEXTRA_SERVICES_DDType" sap:label="Data Definition for BP Extra Services" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="service_id"/>
+                    <PropertyRef Name="service_type"/>
+                </Key>
+                <Property Name="service_id" Type="Edm.Guid" Nullable="false" sap:label="Service ID" sap:quickinfo="Data Element for Service ID"/>
+                <Property Name="service_type" Type="Edm.String" Nullable="false" MaxLength="3" sap:display-format="UpperCase" sap:label="Type" sap:quickinfo="Data Element for Extra Services Type" sap:value-list="standard"/>
+                <Property Name="type" Type="Edm.String" MaxLength="60" sap:label="Type" sap:quickinfo="Short Text for Fixed Values"/>
+                <Property Name="shipping_unit_identification" Type="Edm.String" MaxLength="16" sap:display-format="UpperCase" sap:label="Type" sap:quickinfo="Field of length 16"/>
+                <Property Name="init_date" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="Initial Date" sap:quickinfo="ABAP system field: Current date of application server"/>
+                <Property Name="init_time" Type="Edm.Time" Precision="0" sap:label="Initial Time" sap:quickinfo="ABAP System Field: Local Time of Current User"/>
+                <Property Name="end_date" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="End Date" sap:quickinfo="ABAP system field: Current date of application server"/>
+                <Property Name="end_time" Type="Edm.Time" Precision="0" sap:label="End Time" sap:quickinfo="ABAP System Field: Local Time of Current User"/>
+                <Property Name="created_at" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="Created At" sap:quickinfo="Record Created On"/>
+                <Property Name="created_by" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Created By" sap:quickinfo="Business Partner Number"/>
+                <NavigationProperty Name="to_serviceTypeVH" Relationship="TQA.OD_EXTRA_SERVICES_SRV.assoc_816BF232D6D3E0D6EE13B637631946CC" FromRole="FromRole_assoc_816BF232D6D3E0D6EE13B637631946CC" ToRole="ToRole_assoc_816BF232D6D3E0D6EE13B637631946CC"/>
+            </EntityType>
+            <EntityType Name="xTQAxEXTRA_SERVICES_TYPE_VHType" sap:label="Value Help for Extra Services Type" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="domname"/>
+                    <PropertyRef Name="ddlanguage"/>
+                    <PropertyRef Name="as4local"/>
+                    <PropertyRef Name="valpos"/>
+                    <PropertyRef Name="as4vers"/>
+                </Key>
+                <Property Name="domname" Type="Edm.String" Nullable="false" MaxLength="30" sap:display-format="UpperCase" sap:label="Domain name"/>
+                <Property Name="ddlanguage" Type="Edm.String" Nullable="false" MaxLength="2" sap:label="Lang." sap:quickinfo="Language Key"/>
+                <Property Name="as4local" Type="Edm.String" Nullable="false" MaxLength="1" sap:display-format="UpperCase" sap:label="Activation State" sap:quickinfo="Activation State of Repository Object"/>
+                <Property Name="valpos" Type="Edm.String" Nullable="false" MaxLength="4" sap:display-format="NonNegative" sap:label="Value key" sap:quickinfo="Domain value key"/>
+                <Property Name="as4vers" Type="Edm.String" Nullable="false" MaxLength="4" sap:display-format="NonNegative" sap:label="Version" sap:quickinfo="Version of the entry (not used)"/>
+                <Property Name="ddtext" Type="Edm.String" MaxLength="60" sap:label="Description" sap:quickinfo="Short Text for Fixed Values"/>
+                <Property Name="domval_ld" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Lower limit" sap:quickinfo="Language-specific values for domains, lower limit"/>
+                <Property Name="domval_hd" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Upper Limit" sap:quickinfo="Language-specific values for domains, upper limit"/>
+                <Property Name="domvalue_l" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Item" sap:quickinfo="Values for Domains: Single Value/Lower Limit"/>
+            </EntityType>
+            <Association Name="assoc_816BF232D6D3E0D6EE13B637631946CC" sap:content-version="1">
+                <End Type="TQA.OD_EXTRA_SERVICES_SRV.xTQAxEXTRA_SERVICES_DDType" Multiplicity="1" Role="FromRole_assoc_816BF232D6D3E0D6EE13B637631946CC"/>
+                <End Type="TQA.OD_EXTRA_SERVICES_SRV.xTQAxEXTRA_SERVICES_TYPE_VHType" Multiplicity="1" Role="ToRole_assoc_816BF232D6D3E0D6EE13B637631946CC"/>
+            </Association>
+            <EntityContainer Name="TQA_OD_EXTRA_SERVICES_SRV_Entities" m:IsDefaultEntityContainer="true" sap:message-scope-supported="true" sap:supported-formats="atom json xlsx">
+                <EntitySet Name="xTQAxEXTRA_SERVICES_DD" EntityType="TQA.OD_EXTRA_SERVICES_SRV.xTQAxEXTRA_SERVICES_DDType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"/>
+                <EntitySet Name="xTQAxEXTRA_SERVICES_TYPE_VH" EntityType="TQA.OD_EXTRA_SERVICES_SRV.xTQAxEXTRA_SERVICES_TYPE_VHType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"/>
+                <AssociationSet Name="assoc_816BF232D6D3E0D6EE13B637631946CC" Association="TQA.OD_EXTRA_SERVICES_SRV.assoc_816BF232D6D3E0D6EE13B637631946CC" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="xTQAxEXTRA_SERVICES_DD" Role="FromRole_assoc_816BF232D6D3E0D6EE13B637631946CC"/>
+                    <End EntitySet="xTQAxEXTRA_SERVICES_TYPE_VH" Role="ToRole_assoc_816BF232D6D3E0D6EE13B637631946CC"/>
+                </AssociationSet>
+            </EntityContainer>
+            <Annotation Term="Core.SchemaVersion" String="1.0.0" xmlns="http://docs.oasis-open.org/odata/ns/edm"/>
+            <Annotations Target="TQA.OD_EXTRA_SERVICES_SRV.xTQAxEXTRA_SERVICES_DDType/service_type" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.ValueList">
+                    <Record>
+                        <PropertyValue Property="Label" String="Value Help for Extra Services Type"/>
+                        <PropertyValue Property="CollectionPath" String="xTQAxEXTRA_SERVICES_TYPE_VH"/>
+                        <PropertyValue Property="SearchSupported" Bool="false"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="service_type"/>
+                                    <PropertyValue Property="ValueListProperty" String="domvalue_l"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="ddtext"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="TQA.OD_EXTRA_SERVICES_SRV.TQA_OD_EXTRA_SERVICES_SRV_Entities" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.ApplyMultiUnitBehaviorForSortingAndFiltering" Bool="true"/>
+            </Annotations>
+            <Annotations Target="TQA.OD_EXTRA_SERVICES_SRV.TQA_OD_EXTRA_SERVICES_SRV_Entities/xTQAxEXTRA_SERVICES_DD" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Capabilities.NavigationRestrictions">
+                    <Record>
+                        <PropertyValue Property="RestrictedProperties">
+                            <Collection>
+                                <Record>
+                                    <PropertyValue Property="NavigationProperty" NavigationPropertyPath="to_serviceTypeVH"/>
+                                    <PropertyValue Property="InsertRestrictions">
+                                        <Record>
+                                            <PropertyValue Property="Insertable" Bool="false"/>
+                                        </Record>
+                                    </PropertyValue>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <atom:link rel="self" href="http://erpdd2.rnm.local:50000/sap/opu/odata/tqa/OD_EXTRA_SERVICES_SRV/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+            <atom:link rel="latest-version" href="http://erpdd2.rnm.local:50000/sap/opu/odata/tqa/OD_EXTRA_SERVICES_SRV/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>

@@ -1,0 +1,45 @@
+<mvc:View controllerName="extraservices.controller.CreateService"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m"
+    xmlns:ux="sap.uxap"
+    xmlns:form="sap.ui.layout.form"
+    xmlns:core="sap.ui.core">
+    <Page id="createServicePage" title="{i18n>newEntry}" floatingFooter="false" showNavButton="{AppView>/fromLaunchpad}" navButtonPress="onNavBack">
+        <content>
+            <Panel id="_IDGenPanel1">
+                <form:SimpleForm id="GeneralInfoContainer" editable="false" layout="ColumnLayout" title="{i18n>generalInfo}" columnsM="2" columnsL="3" columnsXL="4" class="sapUiTinyMarginTop">
+                    <form:content>
+                        <Label text="{i18n>service_type}"/>
+                        <Select id="service_type" name="service_type" required="true" forceSelection="false" change="onChangeType" items="{
+							path: '/xTQAxEXTRA_SERVICES_TYPE_VH'
+						}">
+                            <core:ListItem key="{domvalue_l}" text="{ddtext}"/>
+                        </Select>
+
+                        <Label text="{i18n>shipping_unit_identification}"/>
+                        <Input id="shipping_unit_identification" name="shipping_unit_identification" visible="false" required="true"/>
+
+                        <Label text="{i18n>nr_ordem_cliente}"/>
+                        <Select id="nr_ordem_cliente" name="nr_ordem_cliente" visible="false" forceSelection="false" items="{
+							path: '/xTQAxSHIPS_VH'
+						}">
+                            <core:Item key="{nr_ordem_cliente}" text="{nr_ordem_cliente} ({tknum})" />
+                        </Select>
+
+                        <Label text="{i18n>init_date}"/>
+                        <DateTimePicker id="init_date" name="init_date" visible="false" required="true" value="{type: 'sap.ui.model.type.DateTime', formatOptions: {pattern: 'dd.MM.yyyy, HH:mm'}}" valueFormat="yyyy-MM-ddPTHH:mm:ssZ" displayFormat="dd.MM.yyyy, HH:mm"/>
+
+                        <Label text="{i18n>end_date}"/>
+                        <DateTimePicker id="end_date" name="end_date" visible="false" required="true" value="{type: 'sap.ui.model.type.DateTime', formatOptions: {pattern: 'dd.MM.yyyy, HH:mm'}}" valueFormat="yyyy-MM-ddPTHH:mm:ssZ" displayFormat="dd.MM.yyyy, HH:mm"/>
+                    </form:content>
+                </form:SimpleForm>
+            </Panel>
+        </content>
+        <footer>
+            <OverflowToolbar>
+                <ToolbarSpacer/>
+                <Button text="{i18n>createService}" type="Emphasized" press="onCreateService" />
+            </OverflowToolbar>
+        </footer>
+    </Page>
+</mvc:View>
